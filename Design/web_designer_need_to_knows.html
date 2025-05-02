@@ -1,0 +1,153 @@
+Below is a simple static bakery website skeleton. It includes:
+
+```
+BakerySite/
+├─ index.html          ← Home page
+├─ about.html          ← About Us
+├─ menu.html           ← Menu listing
+├─ contact.html        ← Contact form
+├─ css/
+│   └─ style.css       ← Global styles
+└─ Design/
+    ├─ design_considerations.html
+    ├─ web_designer_need_to_knows.html
+    ├─ asset_inventory.html
+    └─ Assets/
+        ├─ Images/
+        │   ├─ logo.svg
+        │   └─ hero-bakery.jpg
+        ├─ Icons/
+        │   └─ social-icons.svg
+        ├─ Fonts/
+        │   └─ bakery-script.woff2
+        ├─ CSS/
+        │   └─ nav.css
+        └─ JS/
+            └─ mobile-menu.js
+```
+
+---
+
+<!-- index.html -->
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SweetCrust Bakery | Fresh Artisan Bread & Pastries</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html"><img src="Design/Assets/Images/logo.svg" alt="SweetCrust Bakery logo"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Open mobile menu">☰</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="Design/Assets/Images/hero-bakery.jpg" alt="Assorted artisan breads on wooden table">
+    <div class="hero-text">
+      <h1>Welcome to SweetCrust Bakery</h1>
+      <p>Handcrafted breads & pastries baked fresh every morning.</p>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Why Choose Us?</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Farm-to-Table</h3>
+        <p>Our ingredients are locally sourced for maximum freshness.</p>
+      </div>
+      <div class="card">
+        <h3>Custom Orders</h3>
+        <p>Bespoke cakes and pastries for any occasion.</p>
+      </div>
+      <div class="card">
+        <h3>Community-Focused</h3>
+        <p>We support local farms and host weekly workshops.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SweetCrust Bakery &bull; <a href="Design/design_considerations.html">Design Considerations</a> | <a href="Design/web_designer_need_to_knows.html">Designer Need‑to‑Knows</a></p>
+  </footer>
+
+  <script src="Design/Assets/JS/mobile-menu.js"></script>
+</body>
+</html>
+```
+
+---
+
+<!-- css/style.css -->
+```css
+/* Global resets & typography */
+body {
+  margin: 0;
+  font-family: 'Bakery Script', sans-serif;
+  color: #333;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #faf3e0;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+}
+.hero {
+  position: relative;
+  text-align: center;
+}
+.hero img {
+  width: 100%;
+  height: auto;
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.8);
+  padding: 1rem;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+.card {
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+footer {
+  text-align: center;
+  background: #faf3e0;
+  padding: 1rem;
+}

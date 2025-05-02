@@ -1,0 +1,103 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fffaf5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  /* Section Headings */
+  section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: #8b4513; /* Rich brown for warmth */
+  }
+  
+  /* Services Section */
+  #services {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  #services article {
+    background-color: #fff;
+    border-left: 6px solid #d2691e; /* Cinnamon-like accent */
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  
+  #services h3 {
+    margin-top: 0;
+    color: #d2691e;
+  }
+  
+  /* Clients Section */
+  #clients {
+    background-color: #fef7f1;
+    padding: 2rem;
+  }
+  
+  #clients table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  #clients th,
+  #clients td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  #clients th {
+    background-color: #f5deb3; /* Light wheat color */
+    color: #4b2e1f;
+  }
+  
+  #clients tbody tr:nth-child(even) {
+    background-color: #fffdf9;
+  }
+  
+  #clients tbody tr:hover {
+    background-color: #fce8d5;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #services, #clients {
+      padding: 1rem;
+    }
+  
+    #clients table, #clients thead, #clients tbody, #clients th, #clients td, #clients tr {
+      display: block;
+    }
+  
+    #clients tr {
+      margin-bottom: 1rem;
+    }
+  
+    #clients td {
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    #clients td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 1rem;
+      font-weight: bold;
+      color: #8b4513;
+    }
+  
+    #clients th {
+      display: none;
+    }
+  }
+  
