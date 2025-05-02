@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Design Considerations – SweetCrust Bakery</title>
+  <meta name="description" content="How SweetCrust Bakery used SEO, design patterns, accessibility, and mobile best practices">
+</head>
+<body>
+  <header>
+    <h1>Design Considerations</h1>
+    <p>Overview of UX & technical principles applied at SweetCrust Bakery</p>
+  </header>
+
+  <!-- Search Engine Optimization (Ch 9) -->
+  <section id="seo">
+    <h2>Search Engine Optimization</h2>
+    <p>
+      On our <a href="index.html">Home page</a>, we crafted a concise &lt;title&gt;  
+      (<code>“SweetCrust Bakery | Fresh Artisan Bread & Pastries”</code>) and meta‑description  
+      (“Discover our daily‑baked sourdough, croissants, and more, baked fresh in Hudson Valley”).  
+      We use semantic headings (<code>&lt;h1&gt;</code> on the page title, <code>&lt;h2&gt;</code> on sections),  
+      and include an XML sitemap at <code>/sitemap.xml</code>.
+    </p>
+    <ul>
+      <li><strong>Blog:</strong> Unique meta tags for each recipe post; keyword‑rich URLs (e.g. <code>/recipes/sourdough-starter</code>).</li>
+      <li><strong>Product pages:</strong> Structured data (JSON‑LD) for “Product” so Google shows pricing & ratings in search results.</li>
+    </ul>
+  </section>
+
+  <!-- User Interface Design Patterns (Ch 8) -->
+  <section id="patterns">
+    <h2>User Interface Design Patterns</h2>
+    <p>
+      We leverage the <strong>Card Pattern</strong> on our <a href="menu.html">Menu page</a>  
+      to showcase each pastry: image at top, product name, short description, price, and “Add to Cart” button.  
+      This grouping makes it easy to scan and compare items.
+    </p>
+    <img src="assets/images/menu-card-example.png" alt="Menu card example">
+  </section>
+
+  <!-- Positional Awareness (Ch 7) -->
+  <section id="positional-awareness">
+    <h2>Positional Awareness</h2>
+    <p>
+      Every subpage includes a breadcrumb trail at the top—e.g.  
+      <code>Home &gt; Menu &gt; Croissants</code>—so users always know where they are in our site hierarchy.
+    </p>
+  </section>
+
+  <!-- Effective Navigation (Ch 7) -->
+  <section id="navigation">
+    <h2>Effective Navigation</h2>
+    <p>
+      We implemented a sticky top navigation bar with clear links:  
+      <code>Home, Menu, Order Online, About Us, Blog, Contact.</code>  
+      On mobile, this condenses to a hamburger menu that slides out.
+    </p>
+    <p>See our mobile nav CSS:  
+      <a href="https://github.com/You/SweetCrust/blob/main/css/nav.css#L45">nav.css#L45</a>
+    </p>
+  </section>
+
+  <!-- Site Accessibility (Ch 3) -->
+  <section id="accessibility">
+    <h2>Site Accessibility</h2>
+    <ul>
+      <li>All images include descriptive <code>alt</code> attributes (e.g. <code>alt="Fully‑baked sourdough loaf"</code>).</li>
+      <li>Color contrast ratios exceed 4.5:1 for body text against backgrounds.</li>
+      <li>ARIA roles on custom components, e.g. <code>role="navigation"</code> on the hamburger menu.</li>
+      <li>Keyboard‑accessible forms on <a href="order.html">Order Online</a>—tab order is logical, focus styles are visible.</li>
+    </ul>
+  </section>
+
+  <!-- Mobile Design Concepts -->
+  <section id="mobile">
+    <h2>Mobile Design Concepts</h2>
+    <ul>
+      <li>Responsive grid via CSS Grid &amp; media queries: 4‑column on desktop, 2‑column on tablet, 1‑column on phone.</li>
+      <li>Touch‑friendly tap targets (≥44 px) on all buttons and links.</li>
+      <li>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt; enabled for proper scaling.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SweetCrust Bakery</p>
+  </footer>
+</body>
+</html>
