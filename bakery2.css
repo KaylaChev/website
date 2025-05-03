@@ -1,0 +1,76 @@
+/* 1. CSS Variables for Your New Color Palette */
+:root {
+    /* --color-bg: #f2eea8;      soft cream */
+    --color-primary: #9BC1BC; /* sage green */
+    --color-accent: #F49097;  /* warm coral */
+    --color-text: #333333;    /* dark gray for legibility */
+  }
+  /* Site Architecture */
+  /* Home (index.html)
+├─ Menu (menu.html)
+├─ About Us (about.html)
+├─ Contact (contact.html) */
+  
+  /* 2. Global Reset & Body */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+  
+  /* 3. Header & Nav */
+  .site-header {
+    background-color: var(--color-primary);
+    color:black;
+    padding: 1em;
+    text-align: center;
+  }
+  .nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 0.5em;
+  }
+  .nav-list a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .nav-list a:hover {
+    color: var(--color-accent);
+  }
+  
+  /* 4. Hero Section */
+  .hero {
+    background-color: var(--color-accent);
+    color: white;
+    padding: 2em 1em;
+    text-align: center;
+  }
+  
+  /* 5. Services Grid */
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 1em;
+  }
+  .services article {
+    flex: 1 1 250px;
+    background: white;
+    border: 2px solid var(--color-primary);
+    padding: 1em;
+  }
+  
+  /* 6. Footer */
+  .site-footer {
+    background-color: var(--color-primary);
+    color:
+  }
