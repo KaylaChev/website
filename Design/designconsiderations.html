@@ -1,89 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Design Considerations – SweetCrust Bakery</title>
-  <meta name="description" content="How SweetCrust Bakery used SEO, design patterns, accessibility, and mobile best practices">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Evaluation Summary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background: #f8f8f8;
+    }
+    h1 {
+      background: #b45309;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    section {
+      background: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #b45309;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    th {
+      background: #f0f0f0;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Design Considerations</h1>
-    <p>Overview of UX & technical principles applied at SweetCrust Bakery</p>
-  </header>
 
-  <!-- Search Engine Optimization (Ch 9) -->
-  <section id="seo">
-    <h2>Search Engine Optimization</h2>
+  <h1>Site Evaluation Summary</h1>
+
+  <section>
+    <h2>✅ Search Engine Optimization (SEO)</h2>
     <p>
-      On our <a href="index.html">Home page</a>, we crafted a concise &lt;title&gt;  
-      (<code>“SweetCrust Bakery | Fresh Artisan Bread & Pastries”</code>) and meta‑description  
-      (“Discover our daily‑baked sourdough, croissants, and more, baked fresh in Hudson Valley”).  
-      We use semantic headings (<code>&lt;h1&gt;</code> on the page title, <code>&lt;h2&gt;</code> on sections),  
-      and include an XML sitemap at <code>/sitemap.xml</code>.
+      The <code>strategy.html</code> page discusses SEO strategies, but the current site implementation lacks essential SEO components:
     </p>
     <ul>
-      <li><strong>Blog:</strong> Unique meta tags for each recipe post; keyword‑rich URLs (e.g. <code>/recipes/sourdough-starter</code>).</li>
-      <li><strong>Product pages:</strong> Structured data (JSON‑LD) for “Product” so Google shows pricing & ratings in search results.</li>
+      <li>No meta tags for descriptions or keywords</li>
+      <li>Missing heading hierarchy like <code>&lt;h2&gt;</code> and <code>&lt;h3&gt;</code></li>
+      <li>Images lack <code>alt</code> attributes</li>
     </ul>
+    <p>Recommendation: Implement structured semantic HTML, meta tags, and optimize all media with alt text.</p>
   </section>
 
-  <!-- User Interface Design Patterns (Ch 8) -->
-  <section id="patterns">
-    <h2>User Interface Design Patterns</h2>
+  <section>
+    <h2>📍 Positional Awareness</h2>
     <p>
-      We leverage the <strong>Card Pattern</strong> on our <a href="menu.html">Menu page</a>  
-      to showcase each pastry: image at top, product name, short description, price, and “Add to Cart” button.  
-      This grouping makes it easy to scan and compare items.
+      Navigation uses a consistent layout across pages, but lacks awareness indicators for user orientation. Example nav:
     </p>
-    <img src="assets/images/menu-card-example.png" alt="Menu card example">
+    <pre><code>
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/AwakenDelights.html"&gt;Services&lt;/a&gt;&lt;/li&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/nav&gt;
+    </code></pre>
+    <p>Recommendation: Highlight active links, add page headers, and consider breadcrumb navigation for context.</p>
   </section>
 
-  <!-- Positional Awareness (Ch 7) -->
-  <section id="positional-awareness">
-    <h2>Positional Awareness</h2>
-    <p>
-      Every subpage includes a breadcrumb trail at the top—e.g.  
-      <code>Home &gt; Menu &gt; Croissants</code>—so users always know where they are in our site hierarchy.
-    </p>
-  </section>
-
-  <!-- Effective Navigation (Ch 7) -->
-  <section id="navigation">
-    <h2>Effective Navigation</h2>
-    <p>
-      We implemented a sticky top navigation bar with clear links:  
-      <code>Home, Menu, Order Online, About Us, Blog, Contact.</code>  
-      On mobile, this condenses to a hamburger menu that slides out.
-    </p>
-    <p>See our mobile nav CSS:  
-      <a href="https://github.com/You/SweetCrust/blob/main/css/nav.css#L45">nav.css#L45</a>
-    </p>
-  </section>
-
-  <!-- Site Accessibility (Ch 3) -->
-  <section id="accessibility">
-    <h2>Site Accessibility</h2>
+  <section>
+    <h2>♿ Site Accessibility</h2>
+    <p>Current implementation includes semantic tags (<code>&lt;nav&gt;</code>, <code>&lt;ul&gt;</code>), but lacks broader accessibility features:</p>
     <ul>
-      <li>All images include descriptive <code>alt</code> attributes (e.g. <code>alt="Fully‑baked sourdough loaf"</code>).</li>
-      <li>Color contrast ratios exceed 4.5:1 for body text against backgrounds.</li>
-      <li>ARIA roles on custom components, e.g. <code>role="navigation"</code> on the hamburger menu.</li>
-      <li>Keyboard‑accessible forms on <a href="order.html">Order Online</a>—tab order is logical, focus styles are visible.</li>
+      <li>No ARIA roles or labels</li>
+      <li>No "skip to content" links</li>
+      <li>No <code>alt</code> attributes for images</li>
     </ul>
+    <p>Recommendation: Add ARIA attributes, ensure color contrast, and use skip links for screen reader support.</p>
   </section>
 
-  <!-- Mobile Design Concepts -->
-  <section id="mobile">
-    <h2>Mobile Design Concepts</h2>
+  <section>
+    <h2>📱 Mobile Design Concepts</h2>
+    <p>The site currently does not utilize responsive design:</p>
     <ul>
-      <li>Responsive grid via CSS Grid &amp; media queries: 4‑column on desktop, 2‑column on tablet, 1‑column on phone.</li>
-      <li>Touch‑friendly tap targets (≥44 px) on all buttons and links.</li>
-      <li>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt; enabled for proper scaling.</li>
+      <li>Everything shown on webpage works nicely except for Services</li>
+      <li>Cases need to be fixed</li>
+      <li>Has collapsible menu</li>
     </ul>
+    <p>Recommendation: Add responsive breakpoints, scale fonts and images, and create mobile-friendly layouts.</p>
   </section>
 
-  <footer>
-    <p>&copy; 2025 SweetCrust Bakery</p>
-  </footer>
+  <section>
+    <h2>🔎 Final Summary Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Area</th>
+          <th>Current State</th>
+          <th>Needs Improvement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SEO</td>
+          <td>Discussed in content, not in code</td>
+          <td>Add meta tags, alt attributes, heading structure</td>
+        </tr>
+        <tr>
+          <td>Positional Awareness</td>
+          <td>Consistent layout, no active state indicators</td>
+          <td>Add page titles, active nav states, breadcrumbs</td>
+        </tr>
+        <tr>
+          <td>Accessibility</td>
+          <td>Semantic HTML used</td>
+          <td>Add ARIA roles, skip links, image descriptions</td>
+        </tr>
+        <tr>
+          <td>Mobile Design</td>
+          <td>Not responsive</td>
+          <td>Implement media queries, mobile menu</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
 </body>
 </html>

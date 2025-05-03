@@ -1,23 +1,64 @@
 <!DOCTYPE html>
-<html>
-<head><title>Asset Inventory</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awaken Delights | Asset List</title>
+  <link rel="stylesheet" href="bakery2.css">
+</head>
 <body>
-  <h1>Page Template Asset Inventory</h1>
 
-  <h2>Existing Assets</h2>
-  <ul>
-    <li><strong>logo.svg</strong> (in /Assets/Images/) — update colors to match revised palette.</li>
-    <li><strong>wireframe_revised.pdf</strong> (in /Design/) — source for HTML layout.</li>
-    <li><strong>style-guide.md</strong> (in /Assets/Docs/) — contains color hex codes & font choices.</li>
-    <li><strong>nav.css</strong> (in /Assets/CSS/) — tweak media‑query breakpoints at 768px.</li>
-  </ul>
+  <header class="site-header">
+    <h1>Awaken Delights</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="/AwakenDelights.html">Services</a></li>
+        <li><a href="/strategy.html">Strategy</a></li>
+        <li><a href="/lab3.html">Case Documents</a></li>
+        <li><a href="/branding.html">Branding</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <h2>New Assets</h2>
-  <ul>
-    <li><strong>hero-banner.jpg</strong> — photograph needed; shoot high‑res bakery interior.</li>
-    <li><strong>social-icons.svg</strong> — design custom Twitter & Instagram icons in Illustrator.</li>
-    <li><strong>mobile-menu.js</strong> — write toggling script for hamburger menu.</li>
-    <li><strong>custom-font.woff2</strong> — generate web‑font from “Bakery Script” TTF.</li>
-  </ul>
+  <main style="padding: 2em;">
+    <h2>Awaken Delights Web Page Asset Checklist</h2>
+
+    <section>
+      <h3>✅ Existing Assets</h3>
+      <ul>
+        <li><strong>bakery2.css</strong> – Main stylesheet (needs responsive/mobile styles added)</li>
+        <li><strong>Logo Image</strong> – <code>16d9d993-ee5e-47dd-a3b4-2b193a563372.jpg</code> (included in branding section)</li>
+        <li><strong>HTML Pages</strong> – index.html, AwakenDelights.html, strategy.html, lab3.html, branding.html</li>
+        <li><strong>Color Palette</strong> – Defined in design section: Sage Green, Coral, Cream, Dark Gray</li>
+        <li><strong>Font Choice</strong> – Arial (set globally in CSS)</li>
+        <li><strong>Navigation Bar</strong> – Already structured with semantic HTML and class names</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>🆕 New or Revised Assets Needed</h3>
+      <ul>
+        <li><strong>Responsive Navigation Menu (Mobile)</strong> – Add CSS media queries + collapsible nav button for smaller screens</li>
+        <li><strong>Header Logo Placement</strong> – Insert the logo image in the top-left of the header for brand consistency</li>
+        <li><strong>Accessibility Enhancements</strong> – Add ARIA labels, skip links, and improved keyboard focus states in CSS</li>
+        <li><strong>Alt Text Descriptions</strong> – Write detailed alt text for all images used across the site</li>
+        <li><strong>JavaScript File (scripts.js)</strong> – For mobile nav toggle and interactive components (like contact forms)</li>
+        <li><strong>Favicon</strong> – Create and include a .ico favicon for browser tabs</li>
+        <li><strong>Footer Social Icons</strong> – Add Instagram, Facebook, and email icons (SVG or PNG)</li>
+        <li><strong>Contact Page HTML</strong> – Optional: a dedicated page with a form (name, email, message)</li>
+        <li><strong>Workshop/Class Photos</strong> – Add image assets for the "Workshops & Classes" section</li>
+        <li><strong>404 Page</strong> – Friendly error page for broken links</li>
+      </ul>
+    </section>
+
+    <p style="margin-top: 2em;">📂 Save all images, CSS, and JS in an <strong>Assets</strong> folder with subfolders:
+      <code>/Assets/Images</code>, <code>/Assets/CSS</code>, <code>/Assets/JS</code></p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Awaken Delights | Designed by Kayla Chevelon</p>
+  </footer>
+
 </body>
 </html>
